@@ -25,7 +25,7 @@ class LoginPage:
     def do_login(self, username, password):
         self.enter_username(username)
         self.enter_password(password)
-        self.Click_login_btn()
+        self.Click_login_button()
         
     def Get_error_message(self):
-        return self.driver1.find_element(By.XPATH, "//p[@class= 'oxd-text oxd-text--p oxd-alert-content-text']").text
+        return self.driver.find_element(By.XPATH, "//p[@class= 'oxd-text oxd-text--p oxd-alert-content-text']").text

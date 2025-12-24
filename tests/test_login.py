@@ -5,10 +5,12 @@ from time import sleep
 from pages.login_page import LoginPage
 
 class TestLogin:
-   def do_login(self,driver):
+   def test_login(self,driver):
         login_page = LoginPage(driver)
-        login_page.do_login("Admin" , "admin123")
-        assert driver.find_element(By.CSS_SELECTOR, ".oxd-text--h6").text == "Dashboard"   
+        login_page.do_login('Admin' , 'admin123')
+        sleep(5)
+        assert driver.find_element(By.XPATH, "//h6").text == "Dashboard" 
+          
        
      
 # def do_login(username, password):
