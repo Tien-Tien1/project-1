@@ -4,7 +4,8 @@ from selenium.webdriver.common.by import By
 import pytest
 from time import sleep
 
-def test_login(driver): 
+def test_login(): 
+    # print('Start testing')
     driver = webdriver.Chrome()
     base_url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     driver.get(base_url)
@@ -21,3 +22,4 @@ def test_login(driver):
     driver.find_element(By.XPATH,"//button[@type='submit']").click()
     sleep(5)
     assert driver.find_element(By.CSS_SELECTOR, ".oxd-text--h6").text == "Dashboard"
+    # print('finished testing')
