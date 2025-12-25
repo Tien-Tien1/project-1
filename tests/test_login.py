@@ -11,8 +11,15 @@ class TestLogin:
         sleep(5)
         assert driver.find_element(By.XPATH, "//h6").text == "Dashboard" 
           
-       
-     
+    
+    # def test_login_fail_wrong_password(self,driver):
+    #     login_page = LoginPage(driver)
+    #     login_page.enter_username("Admin")
+    #     login_page.enter_password("123")
+    #     login_page.Click_login_button()
+    #     login
+    #     sleep(5)
+    
 # def do_login(username, password):
 #     driver.find_element(self.username).send_keys(username)
 #     driver.find_element(self.password).send_keys(password)
@@ -23,4 +30,3 @@ class TestLogin:
     #     login_page.enter_password("admin123")
     #     login_page.Click_login_button()
     # sleep(5)
-    
