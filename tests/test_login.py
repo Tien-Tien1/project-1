@@ -3,11 +3,14 @@ from selenium.webdriver.common.by import By
 import pytest
 from time import sleep
 from pages.login_page import LoginPage
+from utils.config_reader import ConfigReader
+
 
 class TestLogin:
    def test_login(self,driver):
         login_page = LoginPage(driver)
-        login_page.do_login('Admin' , 'admin123')
+        # login_page.do_login('Admin' , 'admin123')
+        login_page.do_login(ConfigReader.get_username(), ConfigReader.get_password())
         sleep(5)
         assert driver.find_element(By.XPATH, "//h6").text == "Dashboard" 
           
@@ -18,6 +21,13 @@ class TestLogin:
     #     login_page.enter_password("123")
     #     login_page.Click_login_button()
     #     login
+    #     sleep(5)
+    
+    # def test_login_fail_wrong_username(self,driver):
+    #     login_page = LoginPage(driver)
+    #     login_page.do_login("Admin1", "admin123")
+    #     login_page.Click_login_button()
+    #     assert driver.find_element(By.CSS_SELECTOR, ".oxd-text--h6").text == "Dashboard"
     #     sleep(5)
     
 # def do_login(username, password):

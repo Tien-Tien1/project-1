@@ -1,0 +1,19 @@
+{
+  "base_url": "https://opensource-demo.orangehrmlive.com",
+  "credentials": {
+    "username": "Admin",
+    "password": "admin123"
+  },
+  "timeouts": {
+    "implicit": 10,
+    "page_load": 30
+  },
+  "thanhct": {
+    "name": "Thành Cao",
+    "age": 45,
+    "children": [
+        {"name": "Gia Linh", "age": 13, "subject": ["toan", "van", "su"]},
+        {"name": "Ha Châu", "age": 4}
+    ]
+  }
+}

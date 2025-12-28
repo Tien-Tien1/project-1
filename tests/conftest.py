@@ -1,5 +1,6 @@
 import pytest
 from selenium import webdriver
+from utils.config_reader import ConfigReader
 
 @pytest.fixture(scope="function")
 def driver():
@@ -9,7 +10,8 @@ def driver():
     driver.maximize_window()
     # base_url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     #base_url = "https://www.wikipedia.org"  #để test trang wiki
-    base_url = "https://www.letskodeit.com/practice"
+    # base_url = "https://www.letskodeit.com/practice"
+    base_url = ConfigReader.get_base_url()
     driver.get(base_url)
     # driver.title
     
