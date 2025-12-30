@@ -11,7 +11,8 @@ def driver():
     # base_url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     #base_url = "https://www.wikipedia.org"  #để test trang wiki
     # base_url = "https://www.letskodeit.com/practice"
-    base_url = ConfigReader.get_base_url()
+    # base_url = ConfigReader.get_base_url() 
+    base_url = "https://the-internet.herokuapp.com/dropdown"
     driver.get(base_url)
     # driver.title
     

@@ -14,7 +14,7 @@ class ConfigReader: #Lưu nội dung file testsetting.json sau khi load
                 ConfigReader._config = json.load(config_file)
         return ConfigReader._config
    
-    @staticmethod
+    @staticmethod # goi truc tiep
     def get_base_url():
         """Get the base URL from the configuration"""
         return ConfigReader.load_config()['base_url']
