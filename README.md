@@ -1,58 +1,98 @@
+<!-- các bước cài selenium -->
 python -m venv .venv
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 pip install selenium pytest
+
+<!-- Các bước push code lên git hub -->
+git init  # Lệnh git init sẽ biến thư mục thành Git repo, tạo thư mục ẩn .git.
 git status
 git add .
+git config --global user.email "email@example.com"
+git config --global user.name "Tên của bạn" 
 git commit -m "initial project "
 git push
+<!-- Thêm --global nghĩa là:· Thiết lập này áp dụng cho tất cả các repo Git trên máy tính của bạn.· Bạn chỉ cần cấu hình một lần duy nhất sau khi cài Git. -->
+
+# Quy trình làm việc cơ bản với Git
+git clone <url>                 Tải mã nguồn từ GitHub về máy
+git checkout -b <tennhanh>      Tạo ra 1 nhành từ main branch
+git status                      Xem trạng thái file
+git add <file>                  Thêm file vào khu vực chuẩn bị (staging)
+git commit -m "Nội dung"        Ghi lại thay đổi
+git log                         Xem lịch sử commit
+git push
+git add .                       Thêm tất cả các files (lệnh nhanh không khuyến khích dùng)
+git remote add origin <url>     Kết nối GitHub
+git push -u origin main         Đẩy code lên GitHub
+git pull                        Kéo code từ GitHub
+git branch                      Xem nhánh hiện tại
+git checkout -b new-branch      Tạo nhánh mới
+git checkout ten-nhanh          Chuyển nhánh
+git reset <file>                Bỏ file sau khi đã add vào staging
+git stash                       Lưu lại tất cả các thay đổi chưa commit 
+git stash save "ghi chú"        Lưu stash kèm ghi chú
+git stash list                  Xem danh sách các stash
+git stash pop                   Lấy lại stash mới nhất và xóa khỏi danh sách
+git stash apply                 Lấy lại stash mới nhất nhưng không xóa
 
 # to run test casses 
 ```
 pytest .\test_login1.py
 ```
-xpath
+
+<!-- xpath -->
 
 1. Dấu / - đi từ cấp hiện tại đến cấp con trực tiếp
 Chọn phần tử con trực tiếp của phần tử hiện tại.
 /html/body/div
+
 2.Dấu // – chọn phần tử ở bất kỳ cấp nào phía dưới
 Chọn mọi phần tử phù hợp nằm bên dưới (con cháu) phần tử hiện tại, không cần là con trực tiếp.
 //form//input
 
 Chọn mọi phần tử <input> nằm bên trong <form>, bất kể cấp độ lồng nhau.
+
 A.Cú pháp cơ bản của XPath
-1.Chọn theo thẻ HTML:
+# 1.Chọn theo thẻ HTML:
 //input
 //button
 //div
-2.Chọn theo thuộc tính:
+
+# 2.Chọn theo thuộc tính:
 //input[@id='username']            → chọn input có id là 'username'
 //button[@type='submit']              → chọn button có type là 'submit'
-3.Chọn theo nhiều điều kiện:
+
+# 3.Chọn theo nhiều điều kiện:
 //input[@type='text' and @name='email']
-B. Hàm hỗ trợ trong XPath
+
+# B. Hàm hỗ trợ trong XPath
 1.contains() – chứa chuỗi:
 //div[contains(@class, 'login-box')]
+
 2.text() – chọn theo nội dung văn bản:
 //button[text()='Login']
 //span[contains(text(), 'Welcome')]
-C. Chọn theo vị trí
+
+# C. Chọn theo vị trí
 Chọn phần tử đầu tiên, cuối cùng, hoặc theo chỉ số:
 (//input[@type='text'])[1]   -> phần tử đầu tiên
 (//div[@class='item'])[last()]      -> phần tử cuối cùng
 (//a[contains(@href, 'page')])[3]   -> phần tử thứ 3
-D. Điều hướng trong cây DOM
+
+# D. Điều hướng trong cây DOM
 
 //div[@class='form-group']/input
 1.Chọn phần tử cha: //input[@id='email']/..
 2.Chọn phần tử anh em: //label[text()='Email']/following-sibling::input
 
-E. Tips khi viết XPath trong automation
+# E. Tips khi viết XPath trong automation
 1. Tránh dùng XPath quá dài vì dễ bị vỡ khi UI thay đổi.
 2. Ưu tiên dùng id, name, data-* nếu có.
 3. Dùng contains() hoặc starts-with() để tăng tính linh hoạt.
+
+
 
 
 
