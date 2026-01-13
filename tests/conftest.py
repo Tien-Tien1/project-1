@@ -12,8 +12,9 @@ def driver():
     #base_url = "https://www.wikipedia.org"  #để test trang wiki
     # base_url = "https://www.letskodeit.com/practice"
     # base_url = ConfigReader.get_base_url() 
-    base_url = "https://the-internet.herokuapp.com/dropdown"
-    driver.get(base_url)
+    # base_url = "https://the-internet.herokuapp.com/dropdown"
+    # base_url = "https://the-internet.herokuapp.com/dropdown"
+    # driver.get(base_url)
     # driver.title
     
     
