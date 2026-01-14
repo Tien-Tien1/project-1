@@ -8,13 +8,13 @@ def driver():
     driver = webdriver.Chrome()
     driver.implicitly_wait(10) # để tìm thấy 1 thành phần nào đó trong tối da 10s de drive co gan lam gì đó
     driver.maximize_window()
-    # base_url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+    base_url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     #base_url = "https://www.wikipedia.org"  #để test trang wiki
     # base_url = "https://www.letskodeit.com/practice"
     # base_url = ConfigReader.get_base_url() 
     # base_url = "https://the-internet.herokuapp.com/dropdown"
     # base_url = "https://the-internet.herokuapp.com/dropdown"
-    # driver.get(base_url)
+    driver.get(base_url)
     # driver.title
     
     
