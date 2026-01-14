@@ -16,14 +16,14 @@ class TestLogin:
         sleep(5)
         assert driver.find_element(By.XPATH, "//h6").text == "Dashboard" 
           
-# class testloginfail:     
-#     def test_login_fail_wrong_password(self,driver: WebDriver):
-#         login_page = LoginPage(driver)
-#         login_page.enter_username("")
-#         login_page.enter_password(ConfigReader.get_password())
-#         login_page.Click_login_button()
-#         sleep(5)
-#         assert driver.find_element(By.XPATH, "").text == ""
+class TestLoginFail:     
+    def test_login_fail_wrong_password(self,driver: WebDriver):
+        login_page = LoginPage(driver)
+        login_page.enter_username("")
+        login_page.enter_password(ConfigReader.get_password())
+        login_page.do_login('',ConfigReader.get_password())
+        sleep(5)
+        assert driver.find_element(By.XPATH, "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']").text == "Required"
     
     # def test_login_fail_wrong_username(self,driver):
     #     login_page = LoginPage(driver)
