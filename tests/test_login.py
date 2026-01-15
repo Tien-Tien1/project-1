@@ -25,13 +25,30 @@ class TestLoginFail:
         sleep(5)
         assert driver.find_element(By.XPATH, "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']").text == "Required"
     
-    # def test_login_fail_wrong_username(self,driver):
-    #     login_page = LoginPage(driver)
-    #     login_page.do_login("Admin1", "admin123")
-    #     login_page.Click_login_button()
-    #     assert driver.find_element(By.CSS_SELECTOR, ".oxd-text--h6").text == "Dashboard"
-    #     sleep(5)
+    def test_login_fail_wrong_username(self,driver):
+        login_page = LoginPage(driver)
+        login_page.enter_username(ConfigReader.get_username())
+        login_page.enter_password('')
+        login_page.do_login(ConfigReader.get_username(),'')
+        sleep(5)
+        assert driver.find_element(By.XPATH, "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']").text == "Required"
     
+    def test_login_fail_empty(self, driver):
+        login_page = LoginPage(driver)
+        login_page.enter_username('')
+        login_page.enter_password('')
+        login_page.do_login('', '')
+        sleep(5)
+        assert driver.find_element(By.XPATH, "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']").text == "Required"  
+    
+    def test_login_fail_wrong_username_password(self, driver):
+        login_page = LoginPage(driver)
+        login_page.enter_username("wrong_username")
+        login_page.enter_password("wrong_password")
+        login_page.do_login("wrong_username", "wrong_password")
+        sleep(5)
+        assert driver.find_element(By.XPATH, "//p[@class='oxd-text oxd-text--p oxd-alert-content-text']").text == "Invalid credentials"
+        
 # def do_login(username, password):
 #     driver.find_element(self.username).send_keys(username)
 #     driver.find_element(self.password).send_keys(password)

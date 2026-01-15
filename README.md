@@ -61,8 +61,11 @@ A.Cú pháp cơ bản của XPath
 //div
 
 # 2.Chọn theo thuộc tính:
-//input[@id='username']            → chọn input có id là 'username'
-//button[@type='submit']              → chọn button có type là 'submit'
+//input[@id='username']            → chọn input có id là 'username' 
+                                                                    (By.ID, "ID") hoặc 
+                                                                    (By.Xpath, "//input [@id='username'])
+
+//button[@type='submit']              → chọn button có type là 'submit'  (By.XPATH,"//button[@type='submit']")
 
 # 3.Chọn theo nhiều điều kiện:
 //input[@type='text' and @name='email']

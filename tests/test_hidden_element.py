@@ -17,5 +17,4 @@ def test_hidden_element(driver):
     show_button = driver.find_element(By.ID, "show-textbox")
     show_button.click()
     sleep(2)
-    
-  
+    assert find_textbox.get_attribute("value") == "Merry Chrismas I wish all happy"
