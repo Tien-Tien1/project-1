@@ -18,7 +18,11 @@ class ConfigReader: #Lưu nội dung file testsetting.json sau khi load
     def get_base_url():
         """Get the base URL from the configuration"""
         return ConfigReader.load_config()['base_url']
-   
+    
+    @staticmethod
+    def get_api_url():
+        return ConfigReader.load_config()['api_url']
+
     @staticmethod
     def get_username():
         """Get the username from the configuration"""

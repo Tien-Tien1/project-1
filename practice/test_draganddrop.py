@@ -8,13 +8,13 @@ import pytest
 
 
 class TestDragAndDrop:
-    def test_drag_and_drop(self, timeout=10):
+    def test_drag_and_drop(self, timeout=15):
         url = "https://demo.guru99.com/test/drag_drop.html"
         driver = webdriver.Chrome()
         driver.get(url)
         driver.maximize_window()
         # driver.switch_to.frame(driver.find_element(By.CLASS_NAME, "demo-frame"))
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 15)
         drag = driver.find_element(By.ID, "fourth")
         drop = driver.find_element(By.ID, "shoppingCart4")
         

@@ -2,7 +2,7 @@ import pytest
 from selenium import webdriver
 from utils.config_reader import ConfigReader
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="function") # Fixture for setting up and tearing down the WebDriver , neu dung sesson de bi loi
 def driver():
     #day la phan setup drive cho cac test script dung va chi setup 1 lan duy nhat
     driver = webdriver.Chrome()

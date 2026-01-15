@@ -14,10 +14,10 @@ class TestMaxSize:
         original = driver.current_window_handle
 
         # click Open Window (try id then fallback)
-        try:
-            driver.find_element(By.ID, "openwindow").click()
-        except Exception:
-            driver.find_element(By.XPATH, "//button[contains(., 'Open Window')]").click()
+        # try:
+        driver.find_element(By.ID, "openwindow").click()
+        # except Exception:
+            # driver.find_element(By.XPATH, "//button[contains(., 'Open Window')]").click()
 
         WebDriverWait(driver, timeout).until(EC.number_of_windows_to_be(2))
 
