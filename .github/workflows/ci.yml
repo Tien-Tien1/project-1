@@ -22,7 +22,7 @@ jobs:
           pip install -r requirement.txt
 
       - name: Install Chrome library
-        uses: browser-actions/setup-chrome@1
+        uses: browser-actions/setup-chrome@v1
 
       - name: Create a test report Folder
         run: mkdir -p reports
