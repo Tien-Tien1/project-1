@@ -7,6 +7,14 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        suite:
+          - tests/test_api.py
+          - tests/test_login.py
+
     steps:
       - name: Checkout source code from github
         uses: actions/checkout@v4
@@ -28,7 +36,8 @@ jobs:
         run: mkdir -p reports
 
       - name: Run Tests
-        run: pytest -m smoke --html=reports/report.html --self-contained-html
+        # run: pytest -m smoke --html=reports/report.html --self-contained-html
+        run: pytest ${{ matrix.suite }} --html=reports/report.html --self-contained-html
 
       - name: Upload Test Report
         if: always()
