@@ -5,7 +5,9 @@ from utils.config_reader import ConfigReader
 @pytest.fixture(scope="function") # Fixture for setting up and tearing down the WebDriver , neu dung sesson de bi loi
 def driver():
     #day la phan setup drive cho cac test script dung va chi setup 1 lan duy nhat
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless=new")
+    driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(10) # để tìm thấy 1 thành phần nào đó trong tối da 10s de drive co gan lam gì đó
     driver.maximize_window()
     base_url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"

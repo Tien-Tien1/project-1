@@ -9,7 +9,8 @@ import tests.conftest as conftest
 
 
 class TestLogin:
-   def test_login(self,driver: WebDriver):
+    @pytest.mark.smoke
+    def test_login(self,driver: WebDriver):
         login_page = LoginPage(driver)
         # login_page.do_login('Admin' , 'admin123')
         login_page.do_login(ConfigReader.get_username(), ConfigReader.get_password())
