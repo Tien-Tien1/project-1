@@ -37,7 +37,7 @@ jobs:
 
       - name: Run Tests
         # run: pytest -m smoke --html=reports/report.html --self-contained-html
-        run: pytest ${{ matrix.suite }}-run-${{ github.run_id }} 
+        run: pytest ${{ matrix.suite }} --
 
       - name: Upload Test Report
         if: always()

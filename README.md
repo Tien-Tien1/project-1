@@ -1,3 +1,10 @@
+<!-- chạy pytest  -->
+pytest .\folder\file.py
+
+<!-- chạy smoke test -->
+
+pytest -m smoke
+
 <!-- các bước cài selenium -->
 python -m venv .venv
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
@@ -94,7 +101,6 @@ Chọn phần tử đầu tiên, cuối cùng, hoặc theo chỉ số:
 1. Tránh dùng XPath quá dài vì dễ bị vỡ khi UI thay đổi.
 2. Ưu tiên dùng id, name, data-* nếu có.
 3. Dùng contains() hoặc starts-with() để tăng tính linh hoạt.
-
 
 
 
